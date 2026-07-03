@@ -57,8 +57,7 @@ const skills = [
 const timeline = [
   { year: "2025", role: "Assistant Marketing Coordinator / Admin Staff", org: "LetzMarket", note: "Canada · Remote" },
   { year: "2024–2025", role: "Social Media Manager", org: "No Boundaries Marketing Group", note: "USA · Remote" },
-  { year: "2023–2024", role: "Human Resource Staff", org: "Toyota Butuan City", note: "Butuan City, PH" },
-  { year: "2022", role: "BS Information System", org: "Caraga State University", note: "Graduated" },
+  { year: "2026", role: "BS Information System", org: "Caraga State University", note: "Graduated" },
 ];
 
 function NavBar({ active, setActive }: { active: string; setActive: (s: string) => void }) {
@@ -576,8 +575,7 @@ function About() {
               <p>
                 I'm John Louie Caparoso, based in Magallanes, Agusan del Norte.
                 My background is in marketing and administration, with around three
-                years across social media management, marketing coordination, and HR
-                support, and a BS in Information System (2022).
+                years across social media management and marketing coordination, and a BS in Information System (2026).
               </p>
               <p>
                 Right now I'm learning front-end web development. I'm working through
