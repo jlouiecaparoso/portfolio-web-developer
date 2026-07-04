@@ -1,62 +1,105 @@
 import { useState } from "react";
-import { Github, ExternalLink, Mail, Facebook, Linkedin, ArrowRight, Code2, Layers, Zap, Globe, Terminal, Palette, Menu, X } from "lucide-react";
+import { Github, ExternalLink, Mail, Facebook, Linkedin, ArrowRight, Code2, Palette, Zap, Globe, Terminal, Database, MessageCircle, FileText, Menu, X } from "lucide-react";
 
 const HERO_IMG = "https://images.unsplash.com/photo-1599837565318-67429bde7162?w=1800&h=900&fit=crop&auto=format";
 const ABOUT_IMG = "/profile.png";
 
 const GITHUB_URL = "https://github.com/johnlouiecaparoso";
+const WHATSAPP_URL = "https://wa.me/639129128000";
+const RESUME_URL = "/resume.html";
 
 const projects = [
   {
-    title: "This Portfolio Site",
-    tag: "Learning by Building",
-    year: "2025",
-    desc: "A real React + TypeScript project I'm customizing hands-on — editing components, content, and styling to learn how a modern front-end codebase fits together.",
-    tech: ["React", "TypeScript", "Tailwind CSS"],
-    href: GITHUB_URL,
-    color: "#a8341f",
-  },
-  {
-    title: "HTML & CSS Practice Pages",
-    tag: "Foundations",
-    year: "2025",
-    desc: "Hand-coded layout exercises focused on responsive design — flexbox, grid, and mobile-first structure — to build a solid foundation in semantic, accessible markup.",
-    tech: ["HTML", "CSS", "Responsive Design"],
-    href: GITHUB_URL,
-    color: "#c08a2d",
-  },
-  {
-    title: "JavaScript Exercises",
-    tag: "In Progress",
-    year: "2025",
-    desc: "Small scripts and interactive snippets to practice JavaScript fundamentals — variables, functions, DOM manipulation, and events — as I work toward building dynamic pages.",
-    tech: ["JavaScript", "DOM", "Git"],
-    href: GITHUB_URL,
+    title: "Carbonify",
+    tag: "Current Work",
+    year: "2026",
+    desc: "A carbon credit marketplace — one of the first of its kind in the Philippines. Buyers connect with verified carbon projects worldwide, and specialists can apply as project developers or verifiers. I help build and ship the platform.",
+    tech: ["Next.js", "TypeScript", "Supabase", "Vercel"],
+    img: "/projects/carbonify.png",
+    live: "https://ecolink-git-main-john-louie-caparosos-projects.vercel.app/home",
+    repo: "https://github.com/johnlouiecaparoso/carbonify13",
     color: "#4f6d5a",
   },
   {
-    title: "Component Customization",
-    tag: "Learning React",
-    year: "2025",
-    desc: "Practicing React by reading, tweaking, and rebuilding UI components — props, state, and reusable pieces — using these portfolio templates as my real-world sandbox.",
-    tech: ["React", "Components", "Props & State"],
-    href: GITHUB_URL,
+    title: "Balanced Scorecard",
+    tag: "OJT · CSU",
+    year: "2026",
+    desc: "A performance-tracking system for Caraga State University. Admins monitor the KPIs of every college and office, then analyze and present the results to the president, board, and stakeholders.",
+    tech: ["React", "TypeScript", "Supabase", "Charts"],
+    img: "/projects/balance-scorecard.png",
+    live: "https://balance-scorecard1.vercel.app/login",
+    repo: "https://github.com/johnlouiecaparoso/BSC",
+    color: "#a8341f",
+  },
+  {
+    title: "Animarka",
+    tag: "OJT · CSU",
+    year: "2026",
+    desc: "An online grade portal for the College of Agriculture. Students sign in to view their grades and scores for each subject, all in one clean place.",
+    tech: ["React", "Supabase", "Tailwind"],
+    img: "/projects/animarka.png",
+    live: "https://animarka.vercel.app/login",
+    repo: "https://github.com/johnlouiecaparoso/animarka",
+    color: "#c08a2d",
+  },
+  {
+    title: "InternTrack",
+    tag: "OJT · CSU",
+    year: "2026",
+    desc: "A biometric internship attendance system for Caraga State University. Interns log time-in / time-out with fingerprint or password login, and admins review daily records.",
+    tech: ["React", "Supabase", "Biometric Auth"],
+    img: "/projects/internship-attendance-system.png",
+    live: "https://biometric-internship6.vercel.app/login",
+    repo: "https://github.com/johnlouiecaparoso/biometric-internship",
+    color: "#3c5a78",
+  },
+  {
+    title: "Psycend",
+    tag: "Board Exam App",
+    year: "2026",
+    desc: "A review platform for psychology board-exam students — timed mock exams, quizzes, flashcards, and analytics that track weak topics and readiness, with Supabase-powered access control.",
+    tech: ["Next.js", "TypeScript", "Supabase"],
+    img: "/projects/psycend.png",
+    live: "https://psycend.vercel.app/",
+    repo: "https://github.com/johnlouiecaparoso/Psycend",
+    color: "#a8341f",
+  },
+  {
+    title: "Mineace",
+    tag: "Board Exam App",
+    year: "2026",
+    desc: "A complete PRC Mining Engineering board reviewer. Students drill mock exams, flip flashcards, and track readiness across every subject — from RA 7942 to mineral processing.",
+    tech: ["Next.js", "Supabase", "Tailwind"],
+    img: "/projects/mineace.png",
+    live: "https://mineace.vercel.app/",
+    repo: "https://github.com/johnlouiecaparoso/mineace",
+    color: "#c08a2d",
+  },
+  {
+    title: "Warrant System",
+    tag: "Records System",
+    year: "2026",
+    desc: "A warrant management system for Butuan City Police Station 1. It replaces paper logs so officers can securely store and search warrant records in seconds.",
+    tech: ["React", "TypeScript", "Supabase"],
+    img: "/projects/warrant-system.png",
+    live: "https://warrant-system01.vercel.app/login",
+    repo: "https://github.com/johnlouiecaparoso/warrant-system",
     color: "#3c5a78",
   },
 ];
 
 const skills = [
-  { icon: Code2, label: "Foundational", items: ["HTML", "CSS", "Responsive Layouts", "Semantic Markup"] },
-  { icon: Zap, label: "Learning", items: ["JavaScript Basics", "DOM & Events", "React (components, props)"] },
-  { icon: Terminal, label: "Workflow", items: ["Git & GitHub Basics", "Code Editors (VS Code)", "Customizing Templates"] },
-  { icon: Palette, label: "From Marketing", items: ["Visual Design Sense", "Canva", "Content & Layout", "Brand Consistency"] },
-  { icon: Layers, label: "Transferable", items: ["Attention to Detail", "Communication", "Problem Solving", "Collaboration"] },
-  { icon: Globe, label: "Exploring Next", items: ["Accessibility Basics", "Deploying Sites", "AI-assisted Coding"] },
+  { icon: Code2, label: "Languages", items: ["HTML", "CSS", "JavaScript", "TypeScript"] },
+  { icon: Zap, label: "Frameworks", items: ["React", "Next.js", "Vue.js"] },
+  { icon: Palette, label: "Styling", items: ["Tailwind CSS", "Bootstrap", "Responsive Design"] },
+  { icon: Database, label: "Backend & Data", items: ["Supabase", "Auth & Databases", "REST APIs"] },
+  { icon: Terminal, label: "Deploy & DevOps", items: ["Vercel", "Git & GitHub", "CI/CD"] },
+  { icon: Globe, label: "Also Bring", items: ["Clean UI/UX eye", "Clear communication", "Problem solving"] },
 ];
 
 const timeline = [
-  { year: "2025", role: "Assistant Marketing Coordinator / Admin Staff", org: "LetzMarket", note: "Canada · Remote" },
-  { year: "2024–2025", role: "Social Media Manager", org: "No Boundaries Marketing Group", note: "USA · Remote" },
+  { year: "2026–Present", role: "Full-Stack Developer", org: "Carbonify", note: "Carbon Credit Marketplace · Remote" },
+  { year: "2026", role: "Web Developer (OJT)", org: "Caraga State University", note: "Built KPI, grade & attendance systems" },
   { year: "2026", role: "BS Information System", org: "Caraga State University", note: "Graduated" },
 ];
 
@@ -192,7 +235,7 @@ function Hero() {
             }}
             className="mb-6"
           >
-            &#9632; Available for freelance · Open to junior roles
+            &#9632; Available for freelance · Open to full-time roles
           </p>
           <h1
             style={{
@@ -204,10 +247,10 @@ function Hero() {
               letterSpacing: "-0.02em",
             }}
           >
-            Learning to
+            I <span style={{ color: "#c08a2d" }}>build</span>
             <br />
-            <span style={{ color: "#c08a2d" }}>build</span> for
-            <br />the web.
+            for the
+            <br />web.
           </h1>
           <p
             style={{
@@ -215,14 +258,13 @@ function Hero() {
               color: "rgba(241,233,219,0.7)",
               fontSize: "1.05rem",
               lineHeight: 1.7,
-              maxWidth: "42ch",
+              maxWidth: "44ch",
             }}
             className="mt-6 mb-10"
           >
-            I'm John Louie — a marketing professional learning front-end web
-            development (HTML, CSS, JavaScript, React). I'm building and
-            customizing real projects, including this portfolio, as I grow my
-            skills.
+            I'm John Louie — a full-stack web developer building real products
+            with React, Next.js, TypeScript, and Supabase. Right now I'm building
+            a carbon credit marketplace at Carbonify.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
@@ -236,10 +278,12 @@ function Hero() {
               }}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-[0.4rem] hover:bg-[#8f2c1a] transition-colors"
             >
-              What I'm Building <ArrowRight size={16} />
+              View My Work <ArrowRight size={16} />
             </a>
             <a
-              href="#contact"
+              href={RESUME_URL}
+              target="_blank"
+              rel="noreferrer"
               style={{
                 fontFamily: "'Libre Franklin', sans-serif",
                 border: "1px solid rgba(241,233,219,0.25)",
@@ -248,15 +292,15 @@ function Hero() {
               }}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-[0.4rem] hover:border-[rgba(241,233,219,0.5)] transition-colors"
             >
-              Get in Touch
+              <FileText size={15} /> View Résumé
             </a>
           </div>
         </div>
         <div className="flex flex-col gap-4 md:gap-5 self-end pb-2">
           {[
-            { num: "BS", label: "Information System, 2022" },
-            { num: "3yrs", label: "Marketing & admin" },
-            { num: "Now", label: "Learning web dev" },
+            { num: "7+", label: "Projects built" },
+            { num: "Full-Stack", label: "React · Next · Supabase" },
+            { num: "2026", label: "BS Info System, CSU" },
           ].map((s) => (
             <div key={s.label} className="flex items-baseline gap-4">
               <span
@@ -304,13 +348,13 @@ function Work() {
             }}
             className="mb-3"
           >
-            What I'm Learning
+            Selected Work
           </p>
           <h2
             style={{ fontFamily: "'Roboto Slab', serif", fontWeight: 700, fontSize: "clamp(2rem, 4vw, 3rem)" }}
             className="text-foreground"
           >
-            Practice Projects
+            Things I've Built
           </h2>
           <p
             style={{
@@ -318,22 +362,38 @@ function Work() {
               color: "#6f6354",
               fontSize: "0.95rem",
               lineHeight: 1.7,
-              maxWidth: "52ch",
+              maxWidth: "56ch",
             }}
             className="mt-4"
           >
-            These are real, hands-on exercises I'm using to learn front-end
-            development — not shipped client products. They're how I'm building
-            foundational skills, one project at a time.
+            Real web apps I've built or shipped — from a university KPI dashboard
+            and board-exam review platforms to a carbon credit marketplace. Each
+            one solves a real problem for real users.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((p) => (
             <article
               key={p.title}
-              className="group bg-card border border-border rounded-[0.4rem] p-6 md:p-8 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-xl transition-all duration-200"
+              className="group bg-card border border-border rounded-[0.4rem] overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-xl transition-all duration-200"
               style={{ boxShadow: "0 2px 8px rgba(33,28,23,0.07)" }}
             >
+              <a
+                href={p.live}
+                target="_blank"
+                rel="noreferrer"
+                className="block relative overflow-hidden border-b border-border"
+                style={{ aspectRatio: "16 / 9", background: p.color + "12" }}
+                aria-label={`Open ${p.title} live site`}
+              >
+                <img
+                  src={p.img}
+                  alt={`${p.title} screenshot`}
+                  loading="lazy"
+                  className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-300"
+                />
+              </a>
+              <div className="p-6 md:p-8 flex flex-col gap-4 flex-1">
               <div className="flex items-start justify-between gap-4">
                 <div
                   style={{
@@ -398,14 +458,36 @@ function Work() {
               </div>
               <div className="flex items-center gap-3 mt-2 pt-4 border-t border-border">
                 <a
-                  href={p.href}
+                  href={p.live}
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: "#a8341f", fontFamily: "'Libre Franklin', sans-serif", fontSize: "0.85rem", fontWeight: 500 }}
-                  className="inline-flex items-center gap-1.5 hover:underline"
+                  style={{
+                    fontFamily: "'Libre Franklin', sans-serif",
+                    fontSize: "0.82rem",
+                    fontWeight: 600,
+                    background: "#a8341f",
+                    color: "#fbf6ee",
+                  }}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-[0.35rem] hover:bg-[#8f2c1a] transition-colors"
                 >
-                  <Github size={13} /> View on GitHub <ExternalLink size={13} />
+                  View Live <ExternalLink size={13} />
                 </a>
+                <a
+                  href={p.repo}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    fontFamily: "'Libre Franklin', sans-serif",
+                    fontSize: "0.82rem",
+                    fontWeight: 500,
+                    border: "1px solid rgba(33,28,23,0.2)",
+                    color: "#211c17",
+                  }}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-[0.35rem] hover:border-[rgba(33,28,23,0.45)] transition-colors"
+                >
+                  <Github size={13} /> Code
+                </a>
+              </div>
               </div>
             </article>
           ))}
@@ -434,7 +516,7 @@ function Skills() {
             }}
             className="mb-3"
           >
-            My Skills
+            My Stack
           </p>
           <h2
             style={{
@@ -444,7 +526,7 @@ function Skills() {
               color: "#f4ece0",
             }}
           >
-            Foundational & Growing
+            Tools I Build With
           </h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
@@ -538,7 +620,7 @@ function About() {
                   color: "rgba(251,246,238,0.8)",
                 }}
               >
-                Learning web dev
+                Building at Carbonify
               </div>
             </div>
           </div>
@@ -560,8 +642,8 @@ function About() {
               style={{ fontFamily: "'Roboto Slab', serif", fontWeight: 700, fontSize: "clamp(2rem, 3.5vw, 2.6rem)" }}
               className="text-foreground mb-6"
             >
-              Building real skills,
-              <br />one project at a time.
+              Full-stack developer
+              <br />who ships real products.
             </h2>
             <div
               style={{
@@ -573,22 +655,23 @@ function About() {
               className="space-y-4 mb-10"
             >
               <p>
-                I'm John Louie Caparoso, based in Magallanes, Agusan del Norte.
-                My background is in marketing and administration, with around three
-                years across social media management and marketing coordination, and a BS in Information System (2026).
+                I'm John Louie Caparoso, a full-stack web developer based in
+                Magallanes, Agusan del Norte. I graduated with a BS in Information
+                System (2026) from Caraga State University — web development is my
+                focus and my profession.
               </p>
               <p>
-                Right now I'm learning front-end web development. I'm working through
-                the fundamentals — HTML, CSS, responsive layouts, JavaScript, and React —
-                and I learn best by building: customizing real templates like this very
-                portfolio, hand-coding practice pages, and getting comfortable with
-                Git and GitHub.
+                During my OJT at the university I built internal systems used by
+                real people: a KPI dashboard for leadership, a student grade
+                portal, and an intern attendance tracker. Today I work as a
+                full-stack developer at Carbonify, a pioneering carbon credit
+                marketplace in the Philippines, and I build board-exam review
+                platforms and records systems on the side.
               </p>
               <p>
-                I'm honest about where I am — early in the journey, but genuinely
-                committed. My marketing background gives me a strong eye for layout,
-                visual design, and clear communication, which I'm carrying into the
-                way I build for the web.
+                I work across the stack — React, Next.js, TypeScript, Tailwind,
+                Vue, and Supabase — and I care about clean, responsive interfaces,
+                clear communication, and shipping things that actually work.
               </p>
             </div>
 
@@ -607,7 +690,7 @@ function About() {
               </p>
               <div className="space-y-5">
                 {timeline.map((t) => (
-                  <div key={t.year} className="flex items-start gap-3 sm:gap-5">
+                  <div key={t.year + t.role} className="flex items-start gap-3 sm:gap-5">
                     <span
                       className="min-w-[4.5rem] sm:min-w-[7rem]"
                       style={{
@@ -677,9 +760,9 @@ function Contact() {
             style={{ fontFamily: "'Roboto Slab', serif", fontWeight: 700, fontSize: "clamp(2rem, 4vw, 3rem)" }}
             className="text-foreground mb-4"
           >
-            Let's connect
+            Let's build
             <br />
-            and grow together.
+            something together.
           </h2>
           <p
             style={{
@@ -687,17 +770,31 @@ function Contact() {
               color: "#6f6354",
               fontSize: "0.95rem",
               lineHeight: 1.75,
-              maxWidth: "44ch",
+              maxWidth: "46ch",
             }}
             className="mb-10"
           >
-            I'm available for freelance work and open to junior front-end roles
-            where I can keep learning. If you're looking for someone eager,
-            detail-oriented, and committed to improving every day — I'd love to
-            hear from you.
+            I'm available for freelance projects and open to full-time web
+            developer roles. Have an idea, a product to build, or a role to fill?
+            Message me on WhatsApp or drop an email — I reply fast.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-14">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-14">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                fontFamily: "'Roboto Slab', serif",
+                background: "#4f6d5a",
+                color: "#fbf6ee",
+                fontWeight: 600,
+                fontSize: "0.95rem",
+              }}
+              className="inline-flex items-center justify-center gap-2 px-5 sm:px-7 py-3.5 rounded-[0.4rem] hover:brightness-110 transition-all text-center"
+            >
+              <MessageCircle size={16} className="shrink-0" /> WhatsApp: 0912 912 8000
+            </a>
             <a
               href="mailto:johnlouiecaparoso@gmail.com"
               style={{
@@ -711,27 +808,15 @@ function Contact() {
             >
               <Mail size={16} className="shrink-0" /> johnlouiecaparoso@gmail.com
             </a>
-            <a
-              href={GITHUB_URL}
-              target="_blank"
-              rel="noreferrer"
-              style={{
-                fontFamily: "'Libre Franklin', sans-serif",
-                border: "1px solid rgba(33,28,23,0.2)",
-                color: "#211c17",
-                fontSize: "0.9rem",
-              }}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-[0.4rem] hover:border-[rgba(33,28,23,0.4)] transition-colors"
-            >
-              <Github size={16} /> View My GitHub
-            </a>
           </div>
 
           <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
             {[
+              { icon: MessageCircle, label: "WhatsApp", href: WHATSAPP_URL },
               { icon: Github, label: "GitHub", href: GITHUB_URL },
               { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/john-louie-caparoso-0a344a256/" },
               { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/louiecaparoso4" },
+              { icon: FileText, label: "Résumé", href: RESUME_URL },
             ].map((s) => (
               <a
                 key={s.label}
@@ -779,7 +864,7 @@ function Footer() {
             color: "rgba(241,233,219,0.35)",
           }}
         >
-          © 2025 John Louie Caparoso · Magallanes, Agusan del Norte, PH
+          © 2026 John Louie Caparoso · Magallanes, Agusan del Norte, PH
         </span>
         <span
           style={{
@@ -789,7 +874,7 @@ function Footer() {
             color: "rgba(241,233,219,0.25)",
           }}
         >
-          Customized while learning to code
+          Full-Stack Web Developer · React · Next.js · Supabase
         </span>
       </div>
     </footer>

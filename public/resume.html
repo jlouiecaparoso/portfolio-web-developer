@@ -20,12 +20,12 @@
   .contact { font-size: 12.5px; line-height:1.55; }
   .contact b { display:inline-block; min-width: 64px; font-weight:700; }
   /* Sections */
-  section { margin-top: 16px; }
+  section { margin-top: 15px; }
   h2.section { font-size: 14px; font-weight:800; letter-spacing:0.3px; text-transform:uppercase;
     margin:0 0 8px; padding-bottom:4px; border-bottom: 1.5px solid var(--rule); }
   p.summary { font-size: 12.5px; line-height:1.55; margin:0; text-align:justify; }
   /* Experience */
-  .job { margin-bottom: 13px; }
+  .job { margin-bottom: 12px; }
   .job .row { display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
   .job .title { font-size: 13px; font-weight:800; }
   .job .year { font-size: 12.5px; font-weight:800; white-space:nowrap; }
@@ -37,11 +37,9 @@
   .edu .deg { font-size:13px; font-weight:800; }
   .edu .yr { font-size:12.5px; font-weight:800; }
   .edu .school { font-size:12px; color:var(--muted); }
-  /* Expertise */
+  /* Skills */
   ul.skills { columns: 2; column-gap: 28px; margin:0; padding-left:18px; }
   ul.skills li { font-size:12px; line-height:1.55; margin-bottom:2px; break-inside:avoid; }
-  .developing { font-size:12px; margin-top:8px; line-height:1.5; }
-  .developing b { font-weight:800; }
   /* References */
   .refs { display:flex; gap: 60px; }
   .ref { font-size:12px; line-height:1.5; }
@@ -60,9 +58,9 @@
       <div class="who">
         <h1>John Louie<br>Caparoso</h1>
         <div class="contact">
-          <div><b>Role:</b> Aspiring Web Developer / Front-End (Learning)</div>
+          <div><b>Role:</b> Full-Stack Web Developer (React · Next.js · Supabase)</div>
           <div><b>Address:</b> Magallanes, Agusan del Norte, Philippines</div>
-          <div><b>Phone:</b> +63 912-912-8000</div>
+          <div><b>WhatsApp:</b> +63 912-912-8000</div>
           <div><b>Email:</b> johnlouiecaparoso@gmail.com</div>
           <div><b>Links:</b> github.com/johnlouiecaparoso · linkedin.com/in/john-louie-caparoso-0a344a256</div>
         </div>
@@ -71,27 +69,38 @@
 
     <section>
       <h2 class="section">Summary</h2>
-      <p class="summary">Detail-oriented marketing and administrative professional now learning front-end web development. Building a genuine foundation in HTML, CSS, responsive layouts, JavaScript, and React by hand-coding practice pages and customizing real projects, including my own portfolio sites, with Git and GitHub. Around three years of experience across social media management and marketing coordination, backed by a BS in Information System. I bring a strong eye for layout and visual design, clear communication, and a habit of working carefully and meeting deadlines. Honest about being early in my coding journey, but committed, fast-learning, and eager to grow into a junior front-end role.</p>
+      <p class="summary">Full-stack web developer and BS Information System graduate (2026) who builds and ships real products with React, Next.js, TypeScript, Vue, Tailwind, and Supabase. Currently developing a pioneering carbon credit marketplace at Carbonify. Experienced building end-to-end web apps — from a university KPI dashboard and student grade portal to board-exam review platforms and a police records system — with clean, responsive UI, authentication, databases, and CI/CD deployment on Vercel and GitHub. Detail-oriented, fast-learning, and focused on shipping software that solves real problems.</p>
     </section>
 
     <section>
       <h2 class="section">Work Experience</h2>
       <div class="job">
-        <div class="row"><span class="title">Assistant Marketing Coordinator / Administrative Staff — LetzMarket</span><span class="year">2025</span></div>
-        <div class="sub">Digital Marketing — Canada (Remote)</div>
+        <div class="row"><span class="title">Full-Stack Developer — Carbonify</span><span class="year">2026–Present</span></div>
+        <div class="sub">Carbon Credit Marketplace (pioneering in the Philippines) — Remote</div>
         <ul>
-          <li>Supported marketing campaigns and content creation across social media, web, and print</li>
-          <li>Collaborated with the creative team to maintain consistent branding</li>
-          <li>Managed administrative tasks to support operations and team efficiency</li>
+          <li>Build and ship features for connecting buyers with verified carbon projects</li>
+          <li>Develop responsive front-end interfaces and backend logic with Supabase</li>
+          <li>Deploy and maintain the platform on Vercel using Git/GitHub and CI/CD</li>
         </ul>
       </div>
       <div class="job">
-        <div class="row"><span class="title">Social Media Manager — No Boundaries Marketing Group</span><span class="year">2024–2025</span></div>
-        <div class="sub">Digital Marketing — USA (Remote)</div>
+        <div class="row"><span class="title">Web Developer — On-the-Job Training (OJT)</span><span class="year">2026</span></div>
+        <div class="sub">Caraga State University — Butuan City</div>
         <ul>
-          <li>Designed and published content (reels, graphics, stories) using scheduling tools</li>
-          <li>Monitored engagement and responded to online conversations</li>
-          <li>Stayed updated with social trends and platform updates</li>
+          <li><b>Balanced Scorecard:</b> a KPI performance-tracking system so admins can analyze and present every college and office's results to the university president, board, and stakeholders — <i>balance-scorecard1.vercel.app</i></li>
+          <li><b>Animarka:</b> an online grade portal for the College of Agriculture where students view their grades and scores per subject — <i>animarka.vercel.app</i></li>
+          <li><b>InternTrack:</b> a biometric (fingerprint) internship attendance system with time-in/out tracking — <i>biometric-internship6.vercel.app</i></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section">Selected Projects</h2>
+      <div class="job">
+        <ul>
+          <li><b>Psycend</b> — psychology board-exam reviewer: mock exams, quizzes, flashcards, and readiness analytics (Next.js, Supabase) — <i>psycend.vercel.app</i></li>
+          <li><b>Mineace</b> — PRC Mining Engineering board reviewer: mock exams, flashcards, and per-subject readiness (Next.js, Supabase) — <i>mineace.vercel.app</i></li>
+          <li><b>Warrant System</b> — warrant records management for Butuan City Police Station 1, replacing paper logs with fast search (React, Supabase) — <i>warrant-system01.vercel.app</i></li>
         </ul>
       </div>
     </section>
@@ -103,20 +112,19 @@
     </section>
 
     <section>
-      <h2 class="section">Skills</h2>
+      <h2 class="section">Technical Skills</h2>
       <ul class="skills">
-        <li>HTML &amp; CSS (foundational)</li>
-        <li>Responsive layouts (flexbox, grid)</li>
-        <li>JavaScript basics (learning)</li>
-        <li>React — components, props, state (learning)</li>
-        <li>Customizing components &amp; content</li>
-        <li>Git &amp; GitHub basics</li>
-        <li>Code editors (VS Code)</li>
-        <li>Visual design sense (from marketing)</li>
-        <li>Canva &amp; graphic design</li>
-        <li>Attention to detail &amp; communication</li>
+        <li>HTML &amp; CSS</li>
+        <li>JavaScript &amp; TypeScript</li>
+        <li>React &amp; Next.js</li>
+        <li>Vue.js</li>
+        <li>Tailwind CSS &amp; Bootstrap</li>
+        <li>Responsive design (flexbox, grid)</li>
+        <li>Supabase (auth &amp; databases)</li>
+        <li>REST APIs</li>
+        <li>Git &amp; GitHub</li>
+        <li>Vercel &amp; CI/CD deployment</li>
       </ul>
-      <p class="developing"><b>Currently Developing:</b> JavaScript &amp; React fundamentals, responsive design, Git/GitHub workflow, and building real projects to practice.</p>
     </section>
 
     <section>
